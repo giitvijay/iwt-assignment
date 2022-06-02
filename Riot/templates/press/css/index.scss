@@ -1,0 +1,204 @@
+$PRIMARY-COLOR: #D13639;
+$PRIMARY-TEXT-COLOR: #f9f9f9;
+
+@mixin common-for-svg($color, $h, $w) {
+    height: $h;
+    width: $w;
+    fill: $color;
+    cursor: pointer;
+}
+
+@mixin set-letter-spacing {
+    letter-spacing: 1px;
+}
+
+@font-face {
+    font-family: 'FF Mark';
+    src: url("../fonts/ff\ mark\ sv/FontFont_FF.Mark.Pro.otf") format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'FF Mark';
+
+    &::selection {
+        background: $PRIMARY-COLOR;
+        color: $PRIMARY-TEXT-COLOR;
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    background-color: #111111;
+    color: $PRIMARY-TEXT-COLOR;
+
+    &__list {
+        &logo {
+            list-style: none;
+
+            .k-logo {
+                transition: fill 200ms ease-in-out;
+                font-size: 13px;
+                @include common-for-svg($PRIMARY-TEXT-COLOR, 27px, 85px);
+
+                &:hover {
+                    fill: $PRIMARY-COLOR;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        display: flex;
+        align-items: center;
+        gap: 3.3rem;
+        margin: 1rem;
+
+        &-item {
+            list-style: none;
+            position: relative;
+            font-size: 13px;
+            text-transform: uppercase;
+            @include set-letter-spacing;
+
+            &:not(:last-child) {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    border-left: 0.35rem solid transparent;
+                    border-right: 0.35rem solid transparent;
+                    border-top: 0.35rem solid #7E7E7E;
+                    top: 50%;
+                    margin-left: 5px;
+                    transform: translateY(-80%);
+                }
+            }
+
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: 2px underline $PRIMARY-COLOR;
+                text-underline-offset: .5rem;
+                transition: text-decoration 200ms ease-in-out;
+            }
+
+            &:hover ul,
+            &:focus ul {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &drop {
+                display: flex;
+                flex-direction: column;
+                width: 9rem;
+                position: absolute;
+                top: 200%;
+                background: #222222;
+                border-radius: 0 0 5px 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+
+                li {
+                    margin: .5rem;
+                    text-transform: capitalize;
+                    list-style: none;
+                    padding: .5rem;
+                    transition: background 200ms ease-in-out;
+
+                    &:hover {
+                        background: #333333;
+                        border-radius: 5px;
+                        color: #C7C7C7;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    &__align-right {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        right: 0;
+        justify-content: flex-end;
+        align-items: center;
+
+        &__lang {
+            .lang-icon {
+                @include common-for-svg($PRIMARY-TEXT-COLOR, 1.2rem, 1.2rem);
+                margin-right: 1rem;
+            }
+        }
+
+        &__search {
+            display: flex;
+            width: 12rem;
+            background-color: #2B2A29;
+            padding: .5rem .3rem .5rem 1.2rem;
+            border-radius: 50px;
+            align-items: center;
+            margin-right: 1rem;
+
+            .search-icon {
+                margin-right: .4rem;
+                @include common-for-svg(#fff, 1.3rem, 1.3rem);
+            }
+
+            .search-box {
+                color: $PRIMARY-TEXT-COLOR;
+                border: none;
+                font-size: .7rem;
+                outline: none;
+                background-color: #2B2A29;
+                width: 100%;
+
+                &::placeholder {
+                    color: #757575;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        &__signin {
+            background-color: $PRIMARY-COLOR;
+            color: #111111;
+            padding: .7rem .6rem;
+            border-radius: 50px;
+            margin-right: 2rem;
+            padding: .6rem 1rem;
+            cursor: pointer;
+
+            a {
+                @include set-letter-spacing;
+                font-size: .7rem;
+                vertical-align: middle;
+                text-transform: uppercase;
+                color: inherit;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            &:hover {
+                background-color: $PRIMARY-TEXT-COLOR;
+                color: $PRIMARY-COLOR;
+                transition: background-color 200ms ease-in-out;
+            }
+        }
+    }
+}
+
+.section-container {
+    &__1 {
+        background: url("../static/annie-tibber-statue-day.png") no-repeat;
+        background-position: top center;
+    }
+}

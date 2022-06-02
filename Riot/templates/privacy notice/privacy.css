@@ -1,0 +1,112 @@
+.head{
+   /* background-image: url(../press/malphite.jpg);
+   height: 15em;
+   width: 100%;
+   background-color: rgb(43,42,40);
+   background-repeat: no-repeat; 
+   background-position: left -20% top -20% ; 
+   background-size: 1200px 400px; */
+   /* outline: 2px solid black; */
+    /* object-fit: cover; */
+   /* object-position: top right; */
+   
+   }
+/* .img{
+    width:80%;
+    height: 15em;
+    object-fit: cover;
+    object-position: top right;
+}    */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e7e6e3;
+}
+.head1{
+    /* position: relative;
+    display: block;
+    text-align: center;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size:44px ;
+    color:#e7e6e3; */
+    position: relative;
+    text-align: center;
+    background-color: #2b2a29;
+    background-image: url('../press/malphite.jpg') ;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    background-position: 50% 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    /* -webkit-clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 5px));
+    clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 5px)); */
+    margin-bottom: 40px;
+    color:#e7e6e3;
+    font-size: 20px;
+    line-height: 54px;
+    font-weight: bold;
+    font-family: "Mark Pro", Arial, sans-serif;
+}
+.intro{
+    width: 49%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    color:#2b2a29;
+    font-family: "Mark Pro", Arial, sans-serif;
+    line-height: 36px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+.s1{
+    font-weight: 700;
+text-decoration: underline;
+}
+.s2{
+    font-weight: 700;
+}
+a{
+    color: #2b2a29;    
+    font-weight: 700;
+    text-decoration: underline;
+
+}
+ul{
+    list-style-type: circle;
+    padding-inline-start: 40px;
+    
+}
+ol{
+    list-style-type: disc;
+    
+    margin-block-start: 0px;
+    padding-inline-start: 40px;
+}
+hr{
+display: block;
+unicode-bidi: isolate;
+margin-block-start: 0.5em;
+margin-block-end: 0.5em;
+margin-inline-start: auto;
+margin-inline-end: auto;
+overflow: hidden;
+overflow-x: hidden;
+overflow-y: hidden;
+border-style: inset;
+border-width: 1px;
+}
+.ui-accordion-content{
+    display: none;
+}
+.cls1:focus ~ .ui-accordion-content{
+    display: block;
+}
+
+
